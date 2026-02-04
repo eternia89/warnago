@@ -1,65 +1,202 @@
-import Image from "next/image";
+"use client";
+
+const PALETTE_COLORS = [
+  { name: "RED", color: "#ff004d" },
+  { name: "ORANGE", color: "#ffa300" },
+  { name: "YELLOW", color: "#ffec27" },
+  { name: "GREEN", color: "#00e436" },
+  { name: "CYAN", color: "#29adff" },
+  { name: "BLUE", color: "#1d2b53" },
+  { name: "PURPLE", color: "#7e2553" },
+  { name: "PINK", color: "#ff77a8" },
+];
+
+function Star({ style }: { style: React.CSSProperties }) {
+  return (
+    <div
+      className="absolute w-1 h-1 bg-white rounded-full"
+      style={{
+        ...style,
+        animation: `star-twinkle ${2 + Math.random() * 3}s ease-in-out infinite`,
+        animationDelay: `${Math.random() * 2}s`,
+      }}
+    />
+  );
+}
+
+function Scanlines() {
+  return (
+    <div className="pointer-events-none fixed inset-0 z-50">
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          background:
+            "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px)",
+        }}
+      />
+      <div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%)",
+        }}
+      />
+    </div>
+  );
+}
+
+function PixelBorder({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="relative p-1">
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `
+            linear-gradient(to right, #fff1e8 4px, transparent 4px) 0 0,
+            linear-gradient(to right, #fff1e8 4px, transparent 4px) 0 100%,
+            linear-gradient(to left, #fff1e8 4px, transparent 4px) 100% 0,
+            linear-gradient(to left, #fff1e8 4px, transparent 4px) 100% 100%,
+            linear-gradient(to bottom, #fff1e8 4px, transparent 4px) 0 0,
+            linear-gradient(to bottom, #fff1e8 4px, transparent 4px) 100% 0,
+            linear-gradient(to top, #fff1e8 4px, transparent 4px) 0 100%,
+            linear-gradient(to top, #fff1e8 4px, transparent 4px) 100% 100%
+          `,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "20px 20px",
+        }}
+      />
+      {children}
+    </div>
+  );
+}
 
 export default function Home() {
+  const stars = Array.from({ length: 50 }, (_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+  }));
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      style={{
+        background:
+          "radial-gradient(ellipse at center, #1d1d1d 0%, #000000 70%)",
+        animation: "flicker 8s infinite",
+      }}
+    >
+      {stars.map((star) => (
+        <Star key={star.id} style={{ left: star.left, top: star.top }} />
+      ))}
+
+      <Scanlines />
+
+      <main className="relative z-10 flex flex-col items-center gap-16 px-4">
+        <PixelBorder>
+          <div className="px-8 py-6">
+            <h1
+              className="text-3xl sm:text-5xl md:text-6xl tracking-wider text-center"
+              style={{
+                fontFamily: "var(--font-pixel), monospace",
+                animation: "color-shift 4s linear infinite, glow-pulse 2s ease-in-out infinite",
+                textShadow: "4px 4px 0 #1d2b53",
+              }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              warnago.com
+            </h1>
+          </div>
+        </PixelBorder>
+
+        <div className="flex flex-col items-center gap-8">
+          <p
+            className="text-xs sm:text-sm tracking-widest uppercase"
+            style={{
+              fontFamily: "var(--font-pixel), monospace",
+              color: "#c2c3c7",
+            }}
+          >
+            Color Palette
+          </p>
+
+          <div className="grid grid-cols-4 sm:grid-cols-8 gap-3 sm:gap-4">
+            {PALETTE_COLORS.map((item, index) => (
+              <div
+                key={item.name}
+                className="flex flex-col items-center gap-2"
+                style={{
+                  animation: `bounce-pixel 1s ease-in-out infinite`,
+                  animationDelay: `${index * 0.1}s`,
+                }}
+              >
+                <div
+                  className="w-12 h-12 sm:w-16 sm:h-16 border-4 border-white/20"
+                  style={{
+                    backgroundColor: item.color,
+                    color: item.color,
+                    animation: `palette-glow 2s ease-in-out infinite`,
+                    animationDelay: `${index * 0.15}s`,
+                    boxShadow: `
+                      4px 4px 0 rgba(0,0,0,0.5),
+                      0 0 20px ${item.color}40
+                    `,
+                  }}
+                />
+                <span
+                  className="text-[8px] sm:text-[10px] tracking-wide"
+                  style={{
+                    fontFamily: "var(--font-pixel), monospace",
+                    color: item.color,
+                    textShadow: `0 0 10px ${item.color}`,
+                  }}
+                >
+                  {item.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center gap-4 mt-8">
+          <p
+            className="text-sm sm:text-base tracking-wide"
+            style={{
+              fontFamily: "var(--font-pixel), monospace",
+              color: "#ffec27",
+              textShadow: "0 0 10px #ffec27, 2px 2px 0 #1d2b53",
+            }}
+          >
+            COMING SOON
+          </p>
+          <p
+            className="text-[10px] sm:text-xs"
+            style={{
+              fontFamily: "var(--font-pixel), monospace",
+              color: "#5f574f",
+              animation: "blink 1s step-end infinite",
+            }}
+          >
+            PRESS START TO WAIT
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
       </main>
+
+      <div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2"
+        style={{ fontFamily: "var(--font-pixel), monospace" }}
+      >
+        {[...Array(3)].map((_, i) => (
+          <div
+            key={i}
+            className="w-2 h-2"
+            style={{
+              backgroundColor: PALETTE_COLORS[i % PALETTE_COLORS.length].color,
+              animation: `bounce-pixel 0.6s ease-in-out infinite`,
+              animationDelay: `${i * 0.2}s`,
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }
