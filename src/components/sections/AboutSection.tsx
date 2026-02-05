@@ -63,9 +63,9 @@ export default function AboutSection() {
                 misi kami
               </div>
               <p className="font-head font-semibold text-white text-2xl leading-relaxed pt-4">
-                "menjadi partner terpercaya dalam setiap perjalanan
+                &ldquo;menjadi partner terpercaya dalam setiap perjalanan
                 warna Anda-dari inspirasi hingga hasil akhir yang
-                memukau."
+                memukau.&rdquo;
               </p>
             </div>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
@@ -23,7 +23,6 @@ export function Map({
 }: MapProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
-  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     if (!mapContainer.current || map.current) return;
@@ -34,10 +33,6 @@ export function Map({
         "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
       center: center,
       zoom: zoom,
-    });
-
-    map.current.on("load", () => {
-      setLoaded(true);
     });
 
     // Add marker with popup
@@ -64,6 +59,7 @@ export function Map({
         closeButton: false,
         className: "map-popup",
         maxWidth: "280px",
+        focusAfterOpen: false,
       }).setHTML(popupContent);
 
       new maplibregl.Marker({ color: "#8ddb57" })
