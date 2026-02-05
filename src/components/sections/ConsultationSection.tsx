@@ -25,7 +25,7 @@ export default function ConsultationSection() {
                 width={200}
                 height={400}
                 loading="lazy"
-                className="w-[200px] h-auto "
+                className="w-[200px] h-auto mix-blend-darken max-sm:w-[120px]"
               />
             </div>
 

@@ -22,7 +22,7 @@ export default function BentoGridSection() {
         priority
       />
       <div className="container mx-auto px-5 relative">
-        <div className="grid grid-cols-[1fr_1.5fr_1fr] max-lg:grid-cols-[1fr_1fr] gap-10 max-sm:grid-cols-1">
+        <div className="grid grid-cols-[1fr_1.5fr_1fr] max-lg:grid-cols-[1fr_1fr] gap-10 max-sm:grid-cols-1 max-sm:gap-4">
           {/* Row 1 */}
           {/* Cell 1: image-1 (machines) */}
           <div className="bento-card relative rounded-[0_400px_400px_0] overflow-hidden h-[320px] max-sm:h-[200px]">
@@ -45,7 +45,7 @@ export default function BentoGridSection() {
           </div>
 
           {/* Cell 3: pink background */}
-          <div className="bento-card  bg-bento-pink rounded-[0_180px_0_180px] aspect-square max-md:hidden flex items-center justify-center text-white p-10 text-center font-head font-medium text-xl h-[320px] max-sm:h-[200px]">
+          <div className="bento-card  bg-warnago-red rounded-[0_180px_0_180px] aspect-square max-md:hidden flex items-center justify-center text-white p-10 text-center font-head font-medium text-xl h-[320px] max-sm:h-[200px]">
             one-stop-solution untuk kebutuhan cat dan perlengkapan
             anda
           </div>

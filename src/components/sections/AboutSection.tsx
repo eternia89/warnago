@@ -1,39 +1,95 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
+import { ReactNode } from "react";
 import image1 from "@/images/image-1.jpg";
 import image2 from "@/images/image-2.jpg";
 import image3 from "@/images/image-3.jpg";
 import image4 from "@/images/image-4.jpg";
 import palette from "@/images/icon-palette.png";
+import paint from "@/images/paint.svg";
+import harga from "@/images/harga.svg";
+import speed from "@/images/speed.svg";
 
 interface FeatureCard {
-  title: string;
+  title: ReactNode;
+  altTitle: string;
   description: string;
   image: StaticImageData;
 }
 
 const featureCards: FeatureCard[] = [
   {
-    title: "Pilihan Warna Lengkap",
+    title: (
+      <>
+        Pilihan <span className="text-[#00B3FF]">w</span>
+        <span className="text-[#00BFA6]">a</span>
+        <span className="text-[#FF2D55]">r</span>
+        <span className="text-[#7C3AED]">n</span>
+        <span className="text-[#00C853]">a</span> Lengkap
+      </>
+    ),
+    altTitle: "Pilihan Warna Lengkap",
     description:
       "Temukan ribuan koleksi warna cat terlengkap untuk menghidupkan suasana ruangan Anda dengan hasil akhir yang memukau dan tahan lama.",
     image: image1,
   },
   {
-    title: "Konsultasi warna di toko",
+    title: (
+      <>
+        Konsultasi{" "}
+        <span className="text-[#5AA824] inline-flex items-center">
+          warn
+          <Image
+            src={paint}
+            alt="color paint"
+            className="mt-2 max-sm:size-4 max-sm:mt-1"
+          />
+        </span>{" "}
+        di toko
+      </>
+    ),
+    altTitle: "Konsultasi warna di toko",
     description:
       "Bingung pilih kombinasi? Tim ahli kami siap membantu Anda menentukan perpaduan warna terbaik yang sesuai dengan estetika karakter hunian.",
     image: image2,
   },
   {
-    title: "Harga yang bersaing",
+    title: (
+      <>
+        <span className="text-[#FE5529] inline-flex items-center">
+          Harg
+          <Image
+            src={harga}
+            alt="color paint"
+            className="mt-2 max-sm:size-4 max-sm:mt-1"
+          />
+        </span>{" "}
+        yang bersaing
+      </>
+    ),
+    altTitle: "Harga yang bersaing",
     description:
       "Nikmati produk berkualitas tinggi dengan harga sangat kompetitif, memberikan solusi hemat dan terbaik untuk hunian anda.",
     image: image3,
   },
   {
-    title: "antar cepat jabodetabek",
+    title: (
+      <>
+        antar{" "}
+        <span className="text-[#861C89] inline-flex items-center">
+          cep
+          <Image
+            src={speed}
+            alt="color paint"
+            className="mt-2 max-sm:size-4 max-sm:mt-1"
+          />
+          t
+        </span>{" "}
+        jabodetabek
+      </>
+    ),
+    altTitle: "antar cepat jabodetabek",
     description:
       "Layanan pengiriman super cepat ke seluruh Jabodetabek, memastikan pesanan cat Anda tiba tepat waktu demi kelancaran proyek.",
     image: image4,
@@ -89,7 +145,7 @@ export default function AboutSection() {
 
         <div className="container mx-auto pl-5 pr-0">
           <div className="overflow-x-auto overflow-y-visible scrollbar-hide snap-x snap-mandatory scroll-smooth">
-            <div className="flex gap-8 pr-20 max-sm:pr-5 max-sm:flex-col max-sm:w-full">
+            <div className="flex gap-8 pr-20 max-sm:pr-5 max-sm:flex-col max-sm:w-full max-sm:gap-4">
               {featureCards.map((card, index) => (
                 <div
                   key={index}
@@ -106,7 +162,7 @@ export default function AboutSection() {
                   <div className="relative h-[400px] max-sm:h-[200px]">
                     <Image
                       src={card.image}
-                      alt={card.title}
+                      alt={card.altTitle}
                       fill
                       loading="lazy"
                       className="object-cover rounded-[20px]"
