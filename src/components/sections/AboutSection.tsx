@@ -10,6 +10,7 @@ import palette from "@/images/icon-palette.png";
 import paint from "@/images/paint.svg";
 import harga from "@/images/harga.svg";
 import speed from "@/images/speed.svg";
+import { useInView } from "@/hooks/useInView";
 
 interface FeatureCard {
   title: ReactNode;
@@ -97,11 +98,24 @@ const featureCards: FeatureCard[] = [
 ];
 
 export default function AboutSection() {
+  const { ref: aboutRef, isInView: aboutInView } = useInView<HTMLDivElement>({
+    threshold: 0.2,
+  });
+  const { ref: cardsRef, isInView: cardsInView } = useInView<HTMLDivElement>({
+    threshold: 0.1,
+  });
+
   return (
     <section id="about" className="max-md:py-16 max-sm:py-12">
-      <div className="container mx-auto px-5 ">
+      <div ref={aboutRef} className="container mx-auto px-5 ">
         <div className="flex gap-20 max-lg:flex-col max-lg:gap-10">
-          <div className="flex-1 py-20 max-lg:order-2 max-sm:py-0">
+          <div
+            className={`flex-1 py-20 max-lg:order-2 max-sm:py-0 transition-all duration-700 ${
+              aboutInView
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-8"
+            }`}
+          >
             <h2 className="font-head font-bold text-5xl  text-warnago-yellow max-md:text-2xl max-sm:text-2xl">
               Tentang Kami
             </h2>
@@ -113,8 +127,14 @@ export default function AboutSection() {
               bersaing.
             </p>
           </div>
-          <div className="flex-1 max-lg:order-1 max-lg:w-full">
-            <div className="bg-warnago-teal w-[480px] max-w-full mx-auto rounded-[0_0_300px_300px] px-21 pt-10 pb-32 max-sm:px-8 max-sm:pb-16 max-sm:rounded-xl">
+          <div
+            className={`flex-1 max-lg:order-1 max-lg:w-full transition-all duration-700 delay-200 ${
+              aboutInView
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-8"
+            }`}
+          >
+            <div className="bg-warnago-teal w-[480px] max-w-full mx-auto rounded-[0_0_300px_300px] px-21 pt-10 pb-32 max-sm:px-8 max-sm:pb-16 max-sm:rounded-xl hover:shadow-2xl transition-shadow duration-300">
               <div className="uppercase font-head font-semibold text-[#00997F] tracking-widest text-xl">
                 misi kami
               </div>
@@ -129,9 +149,15 @@ export default function AboutSection() {
       </div>
 
       {/* Sliding Cards */}
-      <div className="pt-8 pb-20 max-sm:pt-20 max-sm:pb-8">
+      <div ref={cardsRef} className="pt-8 pb-20 max-sm:pt-20 max-sm:pb-8">
         <div className="container mx-auto px-5 mb-8">
-          <div className="flex items-center gap-3 ">
+          <div
+            className={`flex items-center gap-3 transition-all duration-500 ${
+              cardsInView
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
+          >
             <Image
               src={palette}
               alt="color palette"
@@ -149,7 +175,16 @@ export default function AboutSection() {
               {featureCards.map((card, index) => (
                 <div
                   key={index}
-                  className="snap-start shrink-0 w-[380px] max-sm:w-full bg-warnago-yellow rounded-[20px] flex flex-col justify-between"
+                  className={`snap-start shrink-0 w-[380px] max-sm:w-full bg-warnago-yellow rounded-[20px] flex flex-col justify-between hover-lift transition-all duration-500 ${
+                    cardsInView
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  style={{
+                    transitionDelay: cardsInView
+                      ? `${index * 100 + 200}ms`
+                      : "0ms",
+                  }}
                 >
                   <div className="p-9 max-sm:p-4">
                     <h4 className="font-head font-bold text-[40px] leading-[48px] text-bg-dark max-sm:text-2xl">
@@ -159,13 +194,13 @@ export default function AboutSection() {
                       {card.description}
                     </p>
                   </div>
-                  <div className="relative h-[400px] max-sm:h-[200px]">
+                  <div className="relative h-[400px] max-sm:h-[200px] overflow-hidden rounded-[20px]">
                     <Image
                       src={card.image}
                       alt={card.altTitle}
                       fill
                       loading="lazy"
-                      className="object-cover rounded-[20px]"
+                      className="object-cover rounded-[20px] hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </div>

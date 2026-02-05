@@ -83,10 +83,10 @@ export default function NavSection() {
 
           {/* Desktop Navigation */}
           <nav className="text-white flex items-center gap-8 font-head font-semibold text-xl max-lg:text-lg max-lg:gap-4 max-sm:hidden">
-            <Link href="#partners">Partner</Link>
-            <Link href="#about">Tentang Kami</Link>
-            <Link href="#gallery">Toko</Link>
-            <Link href="#consultation">Hubungi Kami</Link>
+            <Link href="#partners" className="link-underline hover:text-warnago-yellow transition-colors duration-300">Partner</Link>
+            <Link href="#about" className="link-underline hover:text-warnago-yellow transition-colors duration-300">Tentang Kami</Link>
+            <Link href="#gallery" className="link-underline hover:text-warnago-yellow transition-colors duration-300">Toko</Link>
+            <Link href="#consultation" className="link-underline hover:text-warnago-yellow transition-colors duration-300">Hubungi Kami</Link>
           </nav>
 
           {/* Burger Menu Button */}
@@ -119,16 +119,32 @@ export default function NavSection() {
             isMenuOpen ? "flex" : "hidden"
           }`}
         >
-          <Link href="#partners" onClick={handleLinkClick}>
+          <Link
+            href="#partners"
+            onClick={handleLinkClick}
+            className="hover:text-warnago-yellow hover:scale-110 transition-all duration-300"
+          >
             Partner
           </Link>
-          <Link href="#about" onClick={handleLinkClick}>
+          <Link
+            href="#about"
+            onClick={handleLinkClick}
+            className="hover:text-warnago-yellow hover:scale-110 transition-all duration-300"
+          >
             Tentang Kami
           </Link>
-          <Link href="#gallery" onClick={handleLinkClick}>
+          <Link
+            href="#gallery"
+            onClick={handleLinkClick}
+            className="hover:text-warnago-yellow hover:scale-110 transition-all duration-300"
+          >
             Toko
           </Link>
-          <Link href="#consultation" onClick={handleLinkClick}>
+          <Link
+            href="#consultation"
+            onClick={handleLinkClick}
+            className="hover:text-warnago-yellow hover:scale-110 transition-all duration-300"
+          >
             Hubungi Kami
           </Link>
         </nav>
