@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
-import { Press_Start_2P } from "next/font/google";
+import { Fredoka, Figtree } from "next/font/google";
 import "./globals.css";
 
-const pressStart = Press_Start_2P({
-  weight: "400",
+const headingFont = Fredoka({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-pixel",
+  variable: "--font-head",
+});
+
+const bodyFont = Figtree({
+  subsets: ["latin"],
+  variable: "--font-body",
 });
 
 export const metadata: Metadata = {
-  title: "warnago.com - Coming Soon",
-  description: "Something awesome is loading... Please wait!",
+  title: "WarnaGo - Toko Cat Terlengkap",
+  description: "WarnaGo - Belanja cat jadi mudah, nyaman, dan menyenangkan. Partner resmi Dulux, Mowilex, Propan, Jotun, Nippon Paint, dan Aquaproof.",
 };
 
 export default function RootLayout({
@@ -19,8 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${pressStart.variable}`}>{children}</body>
+    <html lang="id">
+      <body className={`${headingFont.variable} ${bodyFont.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

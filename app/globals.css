@@ -1,137 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --pixel-red: #ff004d;
-  --pixel-orange: #ffa300;
-  --pixel-yellow: #ffec27;
-  --pixel-green: #00e436;
-  --pixel-cyan: #29adff;
-  --pixel-blue: #1d2b53;
-  --pixel-purple: #7e2553;
-  --pixel-pink: #ff77a8;
-  --pixel-black: #000000;
-  --pixel-dark: #1d1d1d;
-  --pixel-gray: #5f574f;
-  --pixel-light: #c2c3c7;
-  --pixel-white: #fff1e8;
+@theme {
+  /* Fonts */
+  --font-head: var(--font-head);
+  --font-body: var(--font-body);
+
+  /* Brand Colors */
+  --color-warnago-red: #f9399c;
+  --color-warnago-cyan: #00bcd4;
+  --color-warnago-yellow: #fdd623;
+  --color-warnago-green: #8ddb57;
+  --color-warnago-pink: #f48fb1;
+
+  /* Backgrounds */
+  --color-bg-dark: #1a1a1a;
+  --color-bg-light: #f5f5f5;
+
+  /* Bento Cards */
+  --color-bento-yellow: #fdd835;
+  --color-bento-cyan: #26c6da;
+  --color-bento-pink: #f06292;
+  --color-bento-lime: #cddc39;
 }
 
-@theme inline {
-  --font-pixel: var(--font-pixel);
-}
-
-* {
-  image-rendering: pixelated;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--pixel-black);
-  color: var(--pixel-white);
-  font-family: var(--font-pixel), monospace;
-  overflow: hidden;
+  font-family: var(--font-body), sans-serif;
 }
 
-@keyframes flicker {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  92% {
-    opacity: 1;
-  }
-  93% {
-    opacity: 0.8;
-  }
-  94% {
-    opacity: 1;
-  }
+.bento-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-@keyframes scanline {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100vh);
-  }
-}
-
-@keyframes glow-pulse {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 20px currentColor) drop-shadow(0 0 40px currentColor);
-  }
-  50% {
-    filter: drop-shadow(0 0 30px currentColor) drop-shadow(0 0 60px currentColor);
-  }
-}
-
-@keyframes color-shift {
-  0% {
-    color: var(--pixel-red);
-  }
-  14% {
-    color: var(--pixel-orange);
-  }
-  28% {
-    color: var(--pixel-yellow);
-  }
-  42% {
-    color: var(--pixel-green);
-  }
-  56% {
-    color: var(--pixel-cyan);
-  }
-  70% {
-    color: var(--pixel-blue);
-  }
-  84% {
-    color: var(--pixel-purple);
-  }
-  100% {
-    color: var(--pixel-red);
-  }
-}
-
-@keyframes bounce-pixel {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes palette-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 10px currentColor, inset 0 0 10px rgba(255, 255, 255, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 25px currentColor, inset 0 0 15px rgba(255, 255, 255, 0.2);
-  }
-}
-
-@keyframes blink {
-  0%,
-  49% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes star-twinkle {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
