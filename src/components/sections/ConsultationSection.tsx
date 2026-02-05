@@ -16,24 +16,24 @@ export default function ConsultationSection() {
     >
       <div className="container mx-auto px-5">
         <div className="flex gap-10 max-lg:flex-col">
-          <div className="flex items-center gap-12 bg-warnago-yellow rounded-[30px] overflow-clip h-[400px] w-2/3 max-lg:w-full">
+          <div className="flex items-center gap-12 bg-warnago-yellow rounded-[30px] overflow-clip h-[400px] max-sm:h-auto w-2/3 max-lg:w-full max-sm:flex-col max-sm:items-center max-sm:gap-0">
             {/* Phone Image */}
-            <div className="flex justify-center max-md:order-2 self-end">
+            <div className="flex justify-center max-sm:order-2 self-end max-sm:mx-auto">
               <Image
                 src={phone}
                 alt="Contact phone"
                 width={200}
                 height={400}
                 loading="lazy"
-                className="w-[200px] h-auto"
+                className="w-[200px] h-auto "
               />
             </div>
 
-            <div className="">
-              <h2 className="font-head font-semibold text-5xl text-[#445F07] mb-2 max-md:text-2xl max-sm:text-xl">
+            <div className="max-sm:order-1 p-8">
+              <h2 className="font-head font-semibold text-5xl text-[#445F07] mb-2 max-sm:text-2xl">
                 Konsultasi Gratis
               </h2>
-              <p className="font-body text-[#11528C] mb-8 text-2xl pt-4">
+              <p className="font-body text-[#11528C] mb-8 text-2xl pt-4 max-sm:text-lg">
                 Konsultasi cat dengan ahli kami, <br />
                 tersedia setiap hari sampai malam.
               </p>

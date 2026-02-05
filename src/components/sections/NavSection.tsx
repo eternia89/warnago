@@ -71,7 +71,7 @@ export default function NavSection() {
         <div className="container mx-auto flex items-center justify-between px-5">
           <Link
             href="#"
-            className="relative flex flex-col items-center gap-8 px-4 max-sm:px-0"
+            className={`relative flex flex-col items-center gap-8 px-4 max-sm:px-0 ${!isAtTop && isVisible ? "flex" : "invisible"}`}
           >
             <Image
               src={logo}

@@ -19,7 +19,10 @@ const partners = [
 
 export default function PartnerSection() {
   return (
-    <section id="partners" className="bg-bg-dark pt-20 pb-32">
+    <section
+      id="partners"
+      className="bg-bg-dark pt-20 pb-32 max-sm:pb-16"
+    >
       <div className="container mx-auto px-6 w-[1000px] max-w-full">
         <h2 className="font-head font-bold text-5xl text-center text-warnago-yellow mb-12 max-md:text-2xl max-sm:text-xl max-sm:mb-8">
           Partner resmi

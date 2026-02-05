@@ -8,9 +8,15 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-[90lvh] bg-bg-dark overflow-hidden flex flex-col items-center justify-center">
+    <section className="relative h-[90lvh] max-sm:h-[70lvh] bg-bg-dark overflow-hidden flex flex-col items-center justify-center">
       {/* Background texture */}
-      <Image src={bgMain} alt="Colorful paint texture background" fill className="bg-top" priority />
+      <Image
+        src={bgMain}
+        alt="Colorful paint texture background"
+        fill
+        className="bg-top"
+        priority
+      />
       <div className="bg-linear-to-t from-bg-dark to-transparent w-full h-[300px] absolute bottom-0 left-0 right-0"></div>
 
       {/* Splash background */}
@@ -32,7 +38,9 @@ export default function HeroSection() {
             className="w-[700px] h-auto max-md:w-64 max-sm:w-48"
             priority
           />
-          <h1 className="sr-only">WarnaGo - Toko Cat Terlengkap di Tangerang Selatan</h1>
+          <h1 className="sr-only">
+            WarnaGo - Toko Cat Terlengkap di Tangerang Selatan
+          </h1>
 
           {/* Tagline pills */}
           <div className="flex flex-wrap justify-center gap-3 max-sm:gap-2">

@@ -45,12 +45,12 @@ export default function AboutSection() {
     <section id="about" className="max-md:py-16 max-sm:py-12">
       <div className="container mx-auto px-5 ">
         <div className="flex gap-20 max-lg:flex-col max-lg:gap-10">
-          <div className="flex-1 py-20 max-lg:order-2">
-            <h2 className="font-head font-bold text-5xl  text-warnago-yellow max-md:text-2xl max-sm:text-xl max-sm:mb-8">
+          <div className="flex-1 py-20 max-lg:order-2 max-sm:py-0">
+            <h2 className="font-head font-bold text-5xl  text-warnago-yellow max-md:text-2xl max-sm:text-2xl">
               Tentang Kami
             </h2>
 
-            <p className="font-body text-2xl text-[#11528C] leading-relaxed pt-8 max-md:text-base max-sm:text-sm">
+            <p className="font-body text-2xl text-[#11528C] leading-relaxed pt-8 max-sm:pt-4 max-md:text-base max-sm:text-lg">
               Warna Go merupakan toko cat premium dengan konsep
               one-stop solution. Temukan 6 brand cat unggulan dengan
               ribuan pilihan warna, kualitas terjamin, dan harga yang
@@ -58,11 +58,11 @@ export default function AboutSection() {
             </p>
           </div>
           <div className="flex-1 max-lg:order-1 max-lg:w-full">
-            <div className="bg-warnago-teal w-[480px] max-w-full mx-auto rounded-[0_0_300px_300px] px-21 pt-10 pb-32">
+            <div className="bg-warnago-teal w-[480px] max-w-full mx-auto rounded-[0_0_300px_300px] px-21 pt-10 pb-32 max-sm:px-8 max-sm:pb-16 max-sm:rounded-xl">
               <div className="uppercase font-head font-semibold text-[#00997F] tracking-widest text-xl">
                 misi kami
               </div>
-              <p className="font-head font-semibold text-white text-2xl leading-relaxed pt-4">
+              <p className="font-head font-semibold text-white text-2xl leading-relaxed pt-4 max-sm:text-xl">
                 &ldquo;menjadi partner terpercaya dalam setiap
                 perjalanan warna Anda-dari inspirasi hingga hasil
                 akhir yang memukau.&rdquo;
@@ -73,15 +73,15 @@ export default function AboutSection() {
       </div>
 
       {/* Sliding Cards */}
-      <div className="pt-8 pb-20">
+      <div className="pt-8 pb-20 max-sm:pt-20 max-sm:pb-8">
         <div className="container mx-auto px-5 mb-8">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 ">
             <Image
               src={palette}
               alt="color palette"
               className="size-10"
             />
-            <h3 className="font-head font-semibold text-xl tracking-widest uppercase ">
+            <h3 className="font-head font-semibold text-xl tracking-widest uppercase max-sm:text-sm ">
               one-stop solution untuk kebutuhan cat anda
             </h3>
           </div>
@@ -89,21 +89,21 @@ export default function AboutSection() {
 
         <div className="container mx-auto pl-5 pr-0">
           <div className="overflow-x-auto overflow-y-visible scrollbar-hide snap-x snap-mandatory scroll-smooth">
-            <div className="flex gap-8 w-max pr-20">
+            <div className="flex gap-8 pr-20 max-sm:pr-5 max-sm:flex-col max-sm:w-full">
               {featureCards.map((card, index) => (
                 <div
                   key={index}
-                  className="snap-start shrink-0 w-[380px] bg-warnago-yellow rounded-[20px] flex flex-col justify-between"
+                  className="snap-start shrink-0 w-[380px] max-sm:w-full bg-warnago-yellow rounded-[20px] flex flex-col justify-between"
                 >
                   <div className="p-9 max-sm:p-4">
-                    <h4 className="font-head font-bold text-[40px] leading-[48px] text-bg-dark ">
+                    <h4 className="font-head font-bold text-[40px] leading-[48px] text-bg-dark max-sm:text-2xl">
                       {card.title}
                     </h4>
-                    <p className="font-body text-lg pt-4 max-sm:text-sm">
+                    <p className="font-body text-lg pt-4 max-sm:text-base max-sm:pt-2">
                       {card.description}
                     </p>
                   </div>
-                  <div className="relative h-[400px]">
+                  <div className="relative h-[400px] max-sm:h-[200px]">
                     <Image
                       src={card.image}
                       alt={card.title}
