@@ -60,7 +60,7 @@ export default function NavSection() {
             priority
           />
         </Link>
-        <nav className="text-white flex items-center gap-8 font-head font-semibold text-xl">
+        <nav className="text-white flex items-center gap-8 font-head font-semibold text-xl max-lg:text-lg max-lg:gap-4">
           <Link href="#partners">Partner</Link>
           <Link href="#about">Tentang Kami</Link>
           <Link href="#gallery">Toko</Link>

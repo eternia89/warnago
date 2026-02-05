@@ -14,9 +14,15 @@ export default function BentoGridSection() {
       id="gallery"
       className="bg-bg-dark py-20 max-md:py-16 max-sm:py-12 relative"
     >
-      <Image src={bgMain} alt="Colorful paint texture background" fill className="bg-cover" priority />
+      <Image
+        src={bgMain}
+        alt="Colorful paint texture background"
+        fill
+        className="bg-cover"
+        priority
+      />
       <div className="container mx-auto px-5 relative">
-        <div className="grid grid-cols-[1fr_1.5fr_1fr] max-md:grid-cols-2 max-sm:grid-cols-1 gap-10">
+        <div className="grid grid-cols-[1fr_1.5fr_1fr] max-lg:grid-cols-[1fr_1fr] gap-10">
           {/* Row 1 */}
           {/* Cell 1: image-1 (machines) */}
           <div className="bento-card relative rounded-[0_400px_400px_0] overflow-hidden h-[320px]">

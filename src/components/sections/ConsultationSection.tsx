@@ -15,8 +15,8 @@ export default function ConsultationSection() {
       className="py-20 max-md:py-16 max-sm:py-12"
     >
       <div className="container mx-auto px-5">
-        <div className="flex gap-10">
-          <div className="flex items-center gap-12 bg-warnago-yellow rounded-[30px] overflow-clip h-[400px] w-2/3">
+        <div className="flex gap-10 max-lg:flex-col">
+          <div className="flex items-center gap-12 bg-warnago-yellow rounded-[30px] overflow-clip h-[400px] w-2/3 max-lg:w-full">
             {/* Phone Image */}
             <div className="flex justify-center max-md:order-2 self-end">
               <Image
@@ -77,7 +77,7 @@ export default function ConsultationSection() {
               </div>
             </div>
           </div>
-          <div className="h-[400px] w-1/3 rounded-[30px] overflow-hidden">
+          <div className="h-[400px] w-1/3 rounded-[30px] overflow-hidden max-lg:w-full">
             <Map
               center={[106.6510272, -6.2555383]}
               zoom={17}

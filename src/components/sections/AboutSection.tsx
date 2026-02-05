@@ -44,8 +44,8 @@ export default function AboutSection() {
   return (
     <section id="about" className="max-md:py-16 max-sm:py-12">
       <div className="container mx-auto px-5 ">
-        <div className="flex gap-20">
-          <div className="flex-1 py-20">
+        <div className="flex gap-20 max-lg:flex-col max-lg:gap-10">
+          <div className="flex-1 py-20 max-lg:order-2">
             <h2 className="font-head font-bold text-5xl  text-warnago-yellow max-md:text-2xl max-sm:text-xl max-sm:mb-8">
               Tentang Kami
             </h2>
@@ -57,8 +57,8 @@ export default function AboutSection() {
               bersaing.
             </p>
           </div>
-          <div className="flex-1">
-            <div className="bg-warnago-teal w-[480px] mx-auto rounded-[0_0_300px_300px] px-21 pt-10 pb-32">
+          <div className="flex-1 max-lg:order-1 max-lg:w-full">
+            <div className="bg-warnago-teal w-[480px] max-w-full mx-auto rounded-[0_0_300px_300px] px-21 pt-10 pb-32">
               <div className="uppercase font-head font-semibold text-[#00997F] tracking-widest text-xl">
                 misi kami
               </div>

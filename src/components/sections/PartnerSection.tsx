@@ -20,12 +20,12 @@ const partners = [
 export default function PartnerSection() {
   return (
     <section id="partners" className="bg-bg-dark pt-20 pb-32">
-      <div className="container mx-auto px-6 w-[1000px]">
+      <div className="container mx-auto px-6 w-[1000px] max-w-full">
         <h2 className="font-head font-bold text-5xl text-center text-warnago-yellow mb-12 max-md:text-2xl max-sm:text-xl max-sm:mb-8">
           Partner resmi
         </h2>
 
-        <div className="grid grid-cols-3 max-md:grid-cols-2 gap-8 max-sm:gap-4 items-center justify-items-center">
+        <div className="grid grid-cols-3 max-lg:grid-cols-2 gap-8 items-center justify-items-center">
           {partners.map((partner) => (
             <div
               key={partner.name}
