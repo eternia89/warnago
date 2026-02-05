@@ -5,12 +5,12 @@ import Link from "next/link";
 
 import phone from "@/images/phone.png";
 import instagramIcon from "@/images/instagram.svg";
-import tiktokIcon from "@/images/tiktok.svg";
-import { Map } from "@/components/ui/map";
 import { useInView } from "@/hooks/useInView";
 
 export default function ConsultationSection() {
-  const { ref, isInView } = useInView<HTMLElement>({ threshold: 0.2 });
+  const { ref, isInView } = useInView<HTMLElement>({
+    threshold: 0.2,
+  });
 
   return (
     <section
@@ -94,12 +94,16 @@ export default function ConsultationSection() {
                 : "opacity-0 translate-x-8"
             }`}
           >
-            <Map
-              center={[106.6510272, -6.2555383]}
-              zoom={17}
-              markerTitle="Toko Cat WarnaGo"
-              markerDescription="Jl. Raya Serpong No.KM7 No.1-3, Tangerang Selatan, Banten."
-              googleMapsUrl="https://maps.app.goo.gl/hAEGc9fTMUAbCA8UA"
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0621853362645!2d106.6510272!3d-6.2555382999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fb0008d467b9%3A0xc062f92b85d8a278!2sToko%20Cat%20Warna%20Go!5e0!3m2!1sen!2sid!4v1770300261695!5m2!1sen!2sid"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Lokasi Toko Cat WarnaGo"
+              className="w-full h-full"
             />
           </div>
         </div>
