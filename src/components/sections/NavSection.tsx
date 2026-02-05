@@ -22,10 +22,10 @@ export default function NavSection() {
           />
         </Link>
         <nav className="text-white flex items-center gap-8 font-head font-semibold text-xl">
-          <Link href="#">partner</Link>
-          <Link href="#">tentang kami</Link>
-          <Link href="#">toko</Link>
-          <Link href="#">hubungi kami</Link>
+          <Link href="#">Partner</Link>
+          <Link href="#">Tentang Kami</Link>
+          <Link href="#">Toko</Link>
+          <Link href="#">Hubungi Kami</Link>
         </nav>
       </div>
     </section>

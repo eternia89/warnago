@@ -19,9 +19,9 @@ const partners = [
 
 export default function PartnerSection() {
   return (
-    <section id="partners" className="bg-white py-20 max-md:py-16 max-sm:py-12">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="font-head font-bold text-3xl text-center text-bg-dark mb-12 max-md:text-2xl max-sm:text-xl max-sm:mb-8">
+    <section id="partners" className="bg-bg-dark pt-20 pb-32">
+      <div className="container mx-auto px-6 w-[1000px]">
+        <h2 className="font-head font-bold text-5xl text-center text-warnago-yellow mb-12 max-md:text-2xl max-sm:text-xl max-sm:mb-8">
           Partner resmi
         </h2>
 
@@ -29,7 +29,7 @@ export default function PartnerSection() {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="w-full h-24 max-sm:h-16 flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300"
+              className="w-full flex items-center justify-center transition-all duration-300"
             >
               <Image
                 src={partner.logo}

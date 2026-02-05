@@ -14,15 +14,9 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen bg-bg-dark overflow-hidden flex flex-col items-center justify-center">
+    <section className="relative h-screen bg-bg-dark overflow-hidden flex flex-col items-center justify-center">
       {/* Background texture */}
-      <Image
-        src={bgMain}
-        alt=""
-        fill
-        className="object-cover opacity-30"
-        priority
-      />
+      <Image src={bgMain} alt="" fill className=" bg-top" priority />
 
       {/* Splash background */}
       <div className="absolute top-0 left-0 right-0 w-full">
@@ -35,35 +29,35 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-8 px-4 mt-32 max-md:mt-24 max-sm:mt-16">
-        {/* Logo */}
-        <Image
-          src={logo}
-          alt="WarnaGo"
-          className="w-[700px] h-auto max-md:w-64 max-sm:w-48"
-          priority
-        />
+      <div className="relative z-10 flex flex-col items-center gap-20 px-4 mt-32 max-md:mt-24 max-sm:mt-16">
+        <div className="flex flex-col gap-6 items-center">
+          <Image
+            src={logo}
+            alt="WarnaGo"
+            className="w-[700px] h-auto max-md:w-64 max-sm:w-48"
+            priority
+          />
 
-        {/* Tagline pills */}
-        <div className="flex flex-wrap justify-center gap-3 max-sm:gap-2">
-          <span className="px-6 py-2 text-warnago-red text-shadow-warnago-red rounded-full font-head font-bold text-5xl max-md:text-lg max-sm:text-base max-sm:px-4 max-sm:py-1.5">
-            warna Lo!
-          </span>
-          <span className="px-6 py-2 text-warnago-yellow text-shadow-warnago-yellow rounded-full font-head font-bold text-5xl max-md:text-lg max-sm:text-base max-sm:px-4 max-sm:py-1.5">
-            gaya Lo!
-          </span>
-          <span className="px-6 py-2 text-warnago-green text-shadow-warnago-green rounded-full font-head font-bold text-5xl max-md:text-lg max-sm:text-base max-sm:px-4 max-sm:py-1.5">
-            let&apos;s Go!
-          </span>
+          {/* Tagline pills */}
+          <div className="flex flex-wrap justify-center gap-3 max-sm:gap-2">
+            <span className="px-6 py-2 text-warnago-red text-shadow-warnago-red font-head font-bold text-5xl ">
+              warna Lo!
+            </span>
+            <span className="px-6 py-2 text-warnago-yellow text-shadow-warnago-yellow font-head font-bold text-5xl ">
+              gaya Lo!
+            </span>
+            <span className="px-6 py-2 text-warnago-green text-shadow-warnago-green font-head font-bold text-5xl ">
+              let&apos;s Go!
+            </span>
+          </div>
         </div>
 
         {/* CTA Button */}
         <button
           onClick={scrollToPartners}
-          className="mt-8 px-8 py-4 bg-warnago-green text-white rounded-full font-head font-bold text-lg flex items-center gap-2 hover:bg-warnago-green/90 hover:scale-105 transition-all duration-300 max-sm:px-6 max-sm:py-3 max-sm:text-base"
+          className="px-16 py-5 bg-warnago-blue text-white rounded-[20px_5px_30px_10px] font-head font-bold text-3xl flex items-center gap-2 hover:bg-warnago-blue/90 hover:scale-105 transition-all duration-300 max-sm:px-6 max-sm:py-3 max-sm:text-base"
         >
-          Jelajahi
-          <ChevronDown className="w-5 h-5" />
+          Lihat toko kami
         </button>
       </div>
     </section>
