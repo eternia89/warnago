@@ -87,31 +87,33 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="overflow-x-auto scrollbar-hide container mx-auto">
-          <div className="flex gap-8 px-5 snap-x snap-mandatory scroll-smooth min-w-max">
-            {featureCards.map((card, index) => (
-              <div
-                key={index}
-                className="snap-start shrink-0 w-[400px] bg-warnago-yellow rounded-[20px] flex flex-col justify-between"
-              >
-                <div className="p-9 max-sm:p-4">
-                  <h4 className="font-head font-bold text-[40px] leading-[48px] text-bg-dark ">
-                    {card.title}
-                  </h4>
-                  <p className="font-body text-lg pt-4 max-sm:text-sm">
-                    {card.description}
-                  </p>
+        <div className="container mx-auto pl-5 pr-0">
+          <div className="overflow-x-auto overflow-y-visible scrollbar-hide snap-x snap-mandatory scroll-smooth">
+            <div className="flex gap-8 w-max pr-20">
+              {featureCards.map((card, index) => (
+                <div
+                  key={index}
+                  className="snap-start shrink-0 w-[380px] bg-warnago-yellow rounded-[20px] flex flex-col justify-between"
+                >
+                  <div className="p-9 max-sm:p-4">
+                    <h4 className="font-head font-bold text-[40px] leading-[48px] text-bg-dark ">
+                      {card.title}
+                    </h4>
+                    <p className="font-body text-lg pt-4 max-sm:text-sm">
+                      {card.description}
+                    </p>
+                  </div>
+                  <div className="relative h-[400px]">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover rounded-[20px]"
+                    />
+                  </div>
                 </div>
-                <div className="relative h-[400px]">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover rounded-[20px]"
-                  />
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

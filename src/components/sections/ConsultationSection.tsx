@@ -6,6 +6,7 @@ import Link from "next/link";
 import phone from "@/images/phone.png";
 import instagramIcon from "@/images/instagram.svg";
 import tiktokIcon from "@/images/tiktok.svg";
+import { Map } from "@/components/ui/map";
 
 export default function ConsultationSection() {
   return (
@@ -34,8 +35,12 @@ export default function ConsultationSection() {
                 tersedia setiap hari sampai malam.
               </p>
               <div className="flex items-center gap-8">
-                <button className="px-12 py-3 bg-warnago-green text-white rounded-[10px_3px_15px_5px] font-head font-semibold text-xl flex items-center gap-2 hover:bg-warnago-green/90 hover:scale-105 transition-all duration-300 max-sm:px-6 max-sm:py-3 max-sm:text-base">
-                  Whatsapp
+                <button className="px-12 py-3 bg-warnago-green text-white rounded-[10px_3px_15px_5px] font-head font-semibold text-xl flex items-center gap-2 hover:bg-warnago-green/90 hover:scale-105 transition-all duration-300 max-sm:px-6 max-sm:py-3 max-sm:text-base relative overflow-clip border border-black/30 shadow-lg">
+                  <div className="absolute rounded-full size-30 bg-[#3CDD78] -top-18 -left-10"></div>
+                  <div className="absolute rounded-full size-30 bg-[#22C35E] -top-16 -left-14"></div>
+
+                  <div className="absolute rounded-full size-30 bg-[#1EAE54] -bottom-20 -right-14"></div>
+                  <div className="relative">Whatsapp</div>
                 </button>
                 <Link
                   href="https://instagram.com/warnago"
@@ -64,8 +69,14 @@ export default function ConsultationSection() {
               </div>
             </div>
           </div>
-          <div className="h-[400px] bg-white w-1/3 rounded-[30px]">
-            asd
+          <div className="h-[400px] w-1/3 rounded-[30px] overflow-hidden">
+            <Map
+              center={[106.6510272, -6.2555383]}
+              zoom={17}
+              markerTitle="Toko Cat WarnaGo"
+              markerDescription="Jl. Raya Serpong No.KM7 No.1-3, Tangerang Selatan, Banten."
+              googleMapsUrl="https://maps.app.goo.gl/hAEGc9fTMUAbCA8UA"
+            />
           </div>
         </div>
       </div>

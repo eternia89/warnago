@@ -13,10 +13,10 @@ export default function BentoGridSection() {
     <section className="bg-bg-dark py-20 max-md:py-16 max-sm:py-12 relative">
       <Image src={bgMain} alt="" fill className="bg-cover" priority />
       <div className="container mx-auto px-5 relative">
-        <div className="grid grid-cols-[30%_40%_30%] max-md:grid-cols-2 max-sm:grid-cols-1 gap-10">
+        <div className="grid grid-cols-[1fr_1.5fr_1fr] max-md:grid-cols-2 max-sm:grid-cols-1 gap-10">
           {/* Row 1 */}
           {/* Cell 1: image-1 (machines) */}
-          <div className="bento-card relative rounded-[0_400px_400px_0] overflow-hidden h-[300px]">
+          <div className="bento-card relative rounded-[0_400px_400px_0] overflow-hidden h-[320px]">
             <Image
               src={image1}
               alt="Mowilex color mixing machines"
@@ -26,7 +26,7 @@ export default function BentoGridSection() {
           </div>
 
           {/* Cell 2: image-2 (storefront) */}
-          <div className="bento-card relative rounded-[300px_300px_0_0] overflow-hidden h-[300px]">
+          <div className="bento-card relative rounded-[300px_300px_0_0] overflow-hidden h-[320px]">
             <Image
               src={image2}
               alt="Store front exterior"
@@ -36,20 +36,20 @@ export default function BentoGridSection() {
           </div>
 
           {/* Cell 3: pink background */}
-          <div className="bento-card bg-bento-pink rounded-[0_180px_0_180px] aspect-square max-md:hidden flex items-center justify-center text-white p-10 text-center font-head font-medium text-xl h-[300px]">
+          <div className="bento-card  bg-bento-pink rounded-[0_180px_0_180px] aspect-square max-md:hidden flex items-center justify-center text-white p-10 text-center font-head font-medium text-xl h-[320px]">
             one-stop-solution untuk kebutuhan cat dan perlengkapan
             anda
           </div>
 
           {/* Row 2 */}
           {/* Cell 4: lime background */}
-          <div className="bento-card bg-warnago-green rounded-[0_0_0_180px] aspect-square max-md:hidden flex items-center justify-center text-white p-10 text-center font-head font-medium text-xl h-[300px]">
+          <div className="bento-card bg-warnago-green rounded-[0_0_0_180px] aspect-square max-md:hidden flex items-center justify-center text-white p-10 text-center font-head font-medium text-xl h-[320px]">
             one-stop-solution untuk kebutuhan cat dan perlengkapan
             anda
           </div>
 
           {/* Cell 5: tagline text */}
-          <div className="bento-card text-white rounded-2xl h-[300px] flex items-center justify-center p-6">
+          <div className="bento-card text-white rounded-2xl h-[320px] flex items-center justify-center p-6">
             <p className="font-head font-semibold text-5xl text-center leading-snug">
               Belanja cat jadi{" "}
               <span className="text-warnago-red">mudah,</span>{" "}
@@ -60,7 +60,7 @@ export default function BentoGridSection() {
           </div>
 
           {/* Cell 6: image-4 (swatches) */}
-          <div className="bento-card relative rounded-[400px_0_0_400px] overflow-hidden h-[300px]">
+          <div className="bento-card relative rounded-[400px_0_0_400px] overflow-hidden h-[320px]">
             <Image
               src={image3}
               alt="Paint color swatches"
@@ -71,7 +71,7 @@ export default function BentoGridSection() {
 
           {/* Row 3 */}
           {/* Cell 7: image-5 (shelves) */}
-          <div className="bento-card relative rounded-[180px_0_180px_0] overflow-hidden h-[300px] ">
+          <div className="bento-card relative rounded-[180px_0_180px_0] overflow-hidden h-[320px] ">
             <Image
               src={image4}
               alt="Paint cans on shelves"
@@ -81,13 +81,13 @@ export default function BentoGridSection() {
           </div>
 
           {/* Cell 8: yellow background */}
-          <div className="bento-card bg-warnago-yellow mx-auto rounded-[0_400px_400px_0] aspect-square max-md:hidden flex items-center justify-center text-[#987D01] p-10 text-center font-head font-medium text-xl h-[300px]">
+          <div className="bento-card bg-warnago-yellow mx-auto rounded-[0_400px_400px_0] aspect-square max-md:hidden flex items-center justify-center text-[#987D01] p-10 text-center font-head font-medium text-xl h-[320px]">
             Display produk modern memudahkan Anda menemukan pilihan
             warna yang tepat
           </div>
 
           {/* Cell 9: image-3 (interior) */}
-          <div className="bento-card relative rounded-[0_240px_0_0] overflow-hidden h-[300px]  max-md:hidden">
+          <div className="bento-card relative rounded-[0_240px_0_0] overflow-hidden h-[320px]  max-md:hidden">
             <Image
               src={image5}
               alt="Store interior counter"

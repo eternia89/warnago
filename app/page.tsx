@@ -12,7 +12,7 @@ export default function Home() {
       <NavSection />
       <HeroSection />
       <PartnerSection />
-      <div className="bg-[#F3F2F7">
+      <div className="bg-[#F3F2F7]">
         <AboutSection />
         <BentoGridSection />
         <ConsultationSection />

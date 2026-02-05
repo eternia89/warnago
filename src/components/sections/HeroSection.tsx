@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
 import logo from "@/images/logo.png";
 import splash from "@/images/splash.png";
 import bgMain from "@/images/bg-main.jpg";
@@ -14,9 +13,10 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative h-screen bg-bg-dark overflow-hidden flex flex-col items-center justify-center">
+    <section className="relative h-[90lvh] bg-bg-dark overflow-hidden flex flex-col items-center justify-center">
       {/* Background texture */}
-      <Image src={bgMain} alt="" fill className=" bg-top" priority />
+      <Image src={bgMain} alt="" fill className="bg-top" priority />
+      <div className="bg-linear-to-t from-bg-dark to-transparent w-full h-[300px] absolute bottom-0 left-0 right-0"></div>
 
       {/* Splash background */}
       <div className="absolute top-0 left-0 right-0 w-full">
@@ -55,9 +55,13 @@ export default function HeroSection() {
         {/* CTA Button */}
         <button
           onClick={scrollToPartners}
-          className="px-16 py-5 bg-warnago-blue text-white rounded-[20px_5px_30px_10px] font-head font-bold text-3xl flex items-center gap-2 hover:bg-warnago-blue/90 hover:scale-105 transition-all duration-300 max-sm:px-6 max-sm:py-3 max-sm:text-base"
+          className="px-16 py-5 bg-warnago-blue text-white rounded-[20px_5px_30px_10px] font-head font-bold text-3xl flex items-center gap-2 hover:bg-warnago-blue/90 hover:scale-105 transition-all duration-300 max-sm:px-6 max-sm:py-3 max-sm:text-base relative border border-black/30 overflow-clip shadow-xl"
         >
-          Lihat toko kami
+          <div className="absolute rounded-full size-30 bg-[#0CCDFF] -top-18 -left-10"></div>
+          <div className="absolute rounded-full size-30 bg-[#00AEFF] -top-16 -left-14"></div>
+
+          <div className="absolute rounded-full size-30 bg-[#1998FF] -bottom-20 -right-14"></div>
+          <div className="relative">Lihat toko kami</div>
         </button>
       </div>
     </section>
