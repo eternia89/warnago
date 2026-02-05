@@ -10,8 +10,11 @@ import bgMain from "@/images/bg-main.jpg";
 
 export default function BentoGridSection() {
   return (
-    <section className="bg-bg-dark py-20 max-md:py-16 max-sm:py-12 relative">
-      <Image src={bgMain} alt="" fill className="bg-cover" priority />
+    <section
+      id="gallery"
+      className="bg-bg-dark py-20 max-md:py-16 max-sm:py-12 relative"
+    >
+      <Image src={bgMain} alt="Colorful paint texture background" fill className="bg-cover" priority />
       <div className="container mx-auto px-5 relative">
         <div className="grid grid-cols-[1fr_1.5fr_1fr] max-md:grid-cols-2 max-sm:grid-cols-1 gap-10">
           {/* Row 1 */}
@@ -65,6 +68,7 @@ export default function BentoGridSection() {
               src={image3}
               alt="Paint color swatches"
               fill
+              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -76,6 +80,7 @@ export default function BentoGridSection() {
               src={image4}
               alt="Paint cans on shelves"
               fill
+              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -92,6 +97,7 @@ export default function BentoGridSection() {
               src={image5}
               alt="Store interior counter"
               fill
+              loading="lazy"
               className="object-cover"
             />
           </div>

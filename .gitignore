@@ -35,7 +35,40 @@ yarn-error.log*
 
 # vercel
 .vercel
+.agent
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI/Editor configs
+.agents/
+.claude/
+.cline/
+.codebuddy/
+.commandcode/
+.continue/
+.crush/
+.cursor/
+.factory/
+.goose/
+.junie/
+.kilocode/
+.kiro/
+.kode/
+.mcpjam/
+.mux/
+.neovate/
+.openhands/
+.pi/
+.pochi/
+.qoder/
+.qwen/
+.roo/
+.trae/
+.windsurf/
+.zencoder/
+skills/
+
+# Squirrel audit
+squirrel.toml

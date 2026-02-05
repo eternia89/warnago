@@ -4,18 +4,13 @@ import Image from "next/image";
 import logo from "@/images/logo.png";
 import splash from "@/images/splash.png";
 import bgMain from "@/images/bg-main.jpg";
+import Link from "next/link";
 
 export default function HeroSection() {
-  const scrollToPartners = () => {
-    document
-      .getElementById("partners")
-      ?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="relative h-[90lvh] bg-bg-dark overflow-hidden flex flex-col items-center justify-center">
       {/* Background texture */}
-      <Image src={bgMain} alt="" fill className="bg-top" priority />
+      <Image src={bgMain} alt="Colorful paint texture background" fill className="bg-top" priority />
       <div className="bg-linear-to-t from-bg-dark to-transparent w-full h-[300px] absolute bottom-0 left-0 right-0"></div>
 
       {/* Splash background */}
@@ -37,6 +32,7 @@ export default function HeroSection() {
             className="w-[700px] h-auto max-md:w-64 max-sm:w-48"
             priority
           />
+          <h1 className="sr-only">WarnaGo - Toko Cat Terlengkap di Tangerang Selatan</h1>
 
           {/* Tagline pills */}
           <div className="flex flex-wrap justify-center gap-3 max-sm:gap-2">
@@ -53,8 +49,10 @@ export default function HeroSection() {
         </div>
 
         {/* CTA Button */}
-        <button
-          onClick={scrollToPartners}
+        <Link
+          href="https://maps.app.goo.gl/hAEGc9fTMUAbCA8UA"
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-16 py-5 bg-warnago-blue text-white rounded-[20px_5px_30px_10px] font-head font-bold text-3xl flex items-center gap-2 hover:bg-warnago-blue/90 hover:scale-105 transition-all duration-300 max-sm:px-6 max-sm:py-3 max-sm:text-base relative border border-black/30 overflow-clip shadow-xl"
         >
           <div className="absolute rounded-full size-30 bg-[#0CCDFF] -top-18 -left-10"></div>
@@ -62,7 +60,7 @@ export default function HeroSection() {
 
           <div className="absolute rounded-full size-30 bg-[#1998FF] -bottom-20 -right-14"></div>
           <div className="relative">Lihat toko kami</div>
-        </button>
+        </Link>
       </div>
     </section>
   );

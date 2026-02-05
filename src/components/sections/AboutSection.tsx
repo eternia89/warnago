@@ -42,7 +42,7 @@ const featureCards: FeatureCard[] = [
 
 export default function AboutSection() {
   return (
-    <section className="max-md:py-16 max-sm:py-12">
+    <section id="about" className="max-md:py-16 max-sm:py-12">
       <div className="container mx-auto px-5 ">
         <div className="flex gap-20">
           <div className="flex-1 py-20">
@@ -63,9 +63,9 @@ export default function AboutSection() {
                 misi kami
               </div>
               <p className="font-head font-semibold text-white text-2xl leading-relaxed pt-4">
-                &ldquo;menjadi partner terpercaya dalam setiap perjalanan
-                warna Anda-dari inspirasi hingga hasil akhir yang
-                memukau.&rdquo;
+                &ldquo;menjadi partner terpercaya dalam setiap
+                perjalanan warna Anda-dari inspirasi hingga hasil
+                akhir yang memukau.&rdquo;
               </p>
             </div>
           </div>
@@ -108,6 +108,7 @@ export default function AboutSection() {
                       src={card.image}
                       alt={card.title}
                       fill
+                      loading="lazy"
                       className="object-cover rounded-[20px]"
                     />
                   </div>

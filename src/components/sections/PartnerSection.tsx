@@ -34,6 +34,7 @@ export default function PartnerSection() {
               <Image
                 src={partner.logo}
                 alt={partner.name}
+                loading="lazy"
                 className="max-h-full w-auto object-contain"
               />
             </div>

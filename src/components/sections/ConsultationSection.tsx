@@ -22,6 +22,9 @@ export default function ConsultationSection() {
               <Image
                 src={phone}
                 alt="Contact phone"
+                width={200}
+                height={400}
+                loading="lazy"
                 className="w-[200px] h-auto"
               />
             </div>
@@ -35,15 +38,20 @@ export default function ConsultationSection() {
                 tersedia setiap hari sampai malam.
               </p>
               <div className="flex items-center gap-8">
-                <button className="px-12 py-3 bg-warnago-green text-white rounded-[10px_3px_15px_5px] font-head font-semibold text-xl flex items-center gap-2 hover:bg-warnago-green/90 hover:scale-105 transition-all duration-300 max-sm:px-6 max-sm:py-3 max-sm:text-base relative overflow-clip border border-black/30 shadow-lg">
+                <Link
+                  href="https://wa.me/6281118888096"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-12 py-3 bg-warnago-green text-white rounded-[10px_3px_15px_5px] font-head font-semibold text-xl flex items-center gap-2 hover:bg-warnago-green/90 hover:scale-105 transition-all duration-300 max-sm:px-6 max-sm:py-3 max-sm:text-base relative overflow-clip border border-black/30 shadow-lg"
+                >
                   <div className="absolute rounded-full size-30 bg-[#3CDD78] -top-18 -left-10"></div>
                   <div className="absolute rounded-full size-30 bg-[#22C35E] -top-16 -left-14"></div>
 
                   <div className="absolute rounded-full size-30 bg-[#1EAE54] -bottom-20 -right-14"></div>
                   <div className="relative">Whatsapp</div>
-                </button>
+                </Link>
                 <Link
-                  href="https://instagram.com/warnago"
+                  href="https://www.instagram.com/warnago_tokocat/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="size-6 flex items-center justify-center "
@@ -54,7 +62,7 @@ export default function ConsultationSection() {
                     className="size-full "
                   />
                 </Link>
-                <Link
+                {/* <Link
                   href="https://tiktok.com/@warnago"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -65,7 +73,7 @@ export default function ConsultationSection() {
                     alt="TikTok"
                     className="size-full"
                   />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

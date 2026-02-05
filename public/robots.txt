@@ -1,0 +1,5 @@
+# robots.txt for warnago.com
+User-agent: *
+Allow: /
+
+Sitemap: https://warnago.com/sitemap.xml
