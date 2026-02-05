@@ -2,10 +2,10 @@
 
 import Image, { StaticImageData } from "next/image";
 import { ReactNode } from "react";
-import image1 from "@/images/image-1.jpg";
-import image2 from "@/images/image-2.jpg";
-import image3 from "@/images/image-3.jpg";
-import image4 from "@/images/image-4.jpg";
+import image1 from "@/images/color-picker.jpg";
+import image2 from "@/images/consult.jpg";
+import image3 from "@/images/cheap-price.jpg";
+import image4 from "@/images/fast-shipment.jpg";
 import palette from "@/images/icon-palette.png";
 import paint from "@/images/paint.svg";
 import harga from "@/images/harga.svg";
@@ -98,12 +98,14 @@ const featureCards: FeatureCard[] = [
 ];
 
 export default function AboutSection() {
-  const { ref: aboutRef, isInView: aboutInView } = useInView<HTMLDivElement>({
-    threshold: 0.2,
-  });
-  const { ref: cardsRef, isInView: cardsInView } = useInView<HTMLDivElement>({
-    threshold: 0.1,
-  });
+  const { ref: aboutRef, isInView: aboutInView } =
+    useInView<HTMLDivElement>({
+      threshold: 0.2,
+    });
+  const { ref: cardsRef, isInView: cardsInView } =
+    useInView<HTMLDivElement>({
+      threshold: 0.1,
+    });
 
   return (
     <section id="about" className="max-md:py-16 max-sm:py-12">
@@ -149,7 +151,10 @@ export default function AboutSection() {
       </div>
 
       {/* Sliding Cards */}
-      <div ref={cardsRef} className="pt-8 pb-20 max-sm:pt-20 max-sm:pb-8">
+      <div
+        ref={cardsRef}
+        className="pt-8 pb-20 max-sm:pt-20 max-sm:pb-8"
+      >
         <div className="container mx-auto px-5 mb-8">
           <div
             className={`flex items-center gap-3 transition-all duration-500 ${
